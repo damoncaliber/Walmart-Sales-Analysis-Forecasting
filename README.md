@@ -2,14 +2,12 @@
 ![Walmart_Logo](https://upload.wikimedia.org/wikipedia/commons/b/b1/Walmart_logo_%282008%29.svg)
 
 # Introduction 
+**Walmart Inc.**, founded in 1962 by Sam Walton and headquartered in Bentonville, Arkansas, is the world’s largest retail corporation, operating over 10,000 stores and serving more than 230 million customers weekly across 20+ countries. The company’s success is built on its Everyday Low Prices (EDLP) strategy, supported by efficient supply chain management, data-driven decision-making, and large-scale operations across its three major segments — Walmart U.S., Walmart International, and Sam’s Club. As a global leader in retail and logistics innovation, Walmart leverages advanced analytics to optimize inventory, pricing, promotions, and demand forecasting. Analyzing its weekly sales data provides valuable insights into store performance, holiday effects, and economic influences, making it an ideal case for applying data science and predictive modeling to real-world business challenges.
 
 ## Project Overview
+This project applies advanced time-series and machine learning techniques to Walmart’s weekly sales dataset to explore temporal trends, detect sales anomalies, and model the influence of macroeconomic factors. The goal is to generate accurate short-term forecasts and actionable insights that enhance business intelligence and strategic planning capabilities.
 
-This project focuses on analyzing and forecasting Walmart’s weekly sales data to uncover key performance trends, understand the underlying drivers of sales fluctuations, and build predictive insights that inform strategic business planning.
-
-By combining exploratory data analysis (EDA), statistical testing, and time-series forecasting, the project provides a holistic view of Walmart’s operational and financial performance across stores and time periods.
-
-### Key Objectives
+#### Key Objectives
 
 The core goals of this analysis are to:
 
@@ -21,7 +19,7 @@ Identify top- and bottom-performing stores and weeks, highlighting patterns in g
 
 Uncover the drivers of sales variability, including macroeconomic factors such as CPI, unemployment rate, fuel price, temperature, and holiday events.
 
-Build a forecasting model (ARIMA) to predict future weekly sales and support data-driven decision-making.
+Build a forecasting models to predict future weekly sales and support data-driven decision-making.
 
 Deliver actionable insights and recommendations that enhance operational efficiency and optimize sales strategies.
 
@@ -53,7 +51,7 @@ Strategic Insights & Recommendations – Summarize findings to inform data-drive
 
 ## Data Cleaning & Preprocessing
 
-The Walmart dataset includes the following variables:
+The dataset includes the following variables:
 
 | Column Name | Type | Description |
 | :--- | :--- | :--- |
@@ -66,15 +64,13 @@ The Walmart dataset includes the following variables:
 | Unemployment | Float | Unemployment rate for the corresponding region |
 
 
-### Data Preparation Steps
+#### Data Preparation Steps
 
-Missing Value Treatment: Checked and handled missing values using appropriate imputation methods where necessary.
+Checking for missing/null values and duplicates in the dataset for data integrity.
 
 Data Type Conversion: Converted Date column to datetime format for accurate time-series indexing.
 
 Outlier Detection & Visualization: Identified outliers using boxplots and the Interquartile Range (IQR) method to ensure robust statistical analysis.
-
-Duplicate Removal: Verified data integrity by removing duplicate records.
 
 Feature Formatting: Ensured consistent column naming, date sorting, and numerical scaling for modeling.
 
@@ -82,31 +78,46 @@ Time-Series Structuring: Set the Date column as the index to facilitate resampli
 
 ## Exploratory Data Analysis (EDA)
 
-### Key Visuals & Analyses:
-
 #### Seasonal Patterns
 
 * How has the **sales revenue trended over time**?
 
-Weekly Sales Trend: Identified overall sales growth and seasonal fluctuations.
 
-* Do sales exhibit **seasonal trends**? For example, are there spikes during holidays or specific months?
+* Do sales exhibit **seasonal trends**? 
 
-Store Comparison: Ranked stores by total and average weekly sales.
+* What are the top performing and least performing stores?
 
-Holiday Impact: Conducted Welch’s T-test to measure significance of holiday weeks on sales.
+* What are the sales drivers?
 
-External Factors: Explored correlations between sales, temperature, CPI, and unemployment.
+* Holiday Impact?
 
-Outlier Detection: Highlighted abnormal weekly spikes and dips in sales.
+Correlations between sales and economic factors?
 
-### Statistical Insights
+
+
+#### Statistical Insights
 
 An insignificant difference (p < 0.05) was observed between holiday and non-holiday sales, confirming that holidays don't affect sales too much.
 
 Temperature showed a moderate correlation with weekly sales, while CPI and unemployment had mild negative effects.
 
 The top-performing stores consistently achieved higher sales during promotional and festive periods.
+
+## Machine Learning 
+
+A regression model (Random Forest or XGBoost) was trained to predict weekly sales using external factors (CPI, Unemployment, Fuel price, Temperature).
+
+Evaluation Metrics:
+
+Mean Absolute Error (MAE)
+
+Root Mean Squared Error (RMSE)
+
+R² Score
+
+Feature importance analysis revealed that:
+
+Store, Holiday_Flag, and Unemployment were top predictors of weekly sales.
 
 ## Time Series Forecasting
 
@@ -125,21 +136,6 @@ Forecast visualization and evaluation
 Results:
 The forecast model successfully predicted upcoming sales trends, identifying expected peaks during holiday seasons and dips in off-peak periods.
 
-## Machine Learning 
-
-A regression model (Random Forest or XGBoost) was trained to predict weekly sales using external factors (CPI, unemployment, fuel price, temperature).
-
-Evaluation Metrics:
-
-Mean Absolute Error (MAE)
-
-Root Mean Squared Error (RMSE)
-
-R² Score
-
-Feature importance analysis revealed that:
-
-Store, Holiday_Flag, and Unemployment were top predictors of weekly sales.
 
 ## Key Findings & Recommendations
 
@@ -173,26 +169,24 @@ Forecasted trends can guide promotional planning and inventory stocking strategi
 
 
 ## Tools & Technologies
-
-Python – Core programming language for data cleaning, transformation, and analysis.
-Pandas – Data wrangling and manipulation, handling missing values, and efficient group-by operations.
-NumPy – Numerical computing and support for vectorized operations.
-Matplotlib – Creation of static, high-quality visualizations and custom plots.
-Seaborn – Advanced statistical graphics and aesthetically pleasing charts.
-Jupyter Notebook – Interactive environment for code execution, analysis, and visualization.
-Git & GitHub – Version control, project documentation, and public repository hosting.
+| Programming | Description |
+| :--- | :--- | 
+| Python | Core programming language for data cleaning, transformation, and analysis. | 
+| Pandas | Data wrangling and manipulation, handling missing values, and efficient group-by operations. | 
+| NumPy | Numerical computing and support for vectorized operations. | 
+| Matplotlib |  Creation of static, high-quality visualizations and custom plots. | 
+| Seaborn | Advanced statistical graphics and aesthetically pleasing charts. | 
+| Jupyter Notebook | Interactive environment for code execution, analysis, and visualization. | 
+| Git & GitHub | Version control, project documentation, and public repository hosting. | 
 
 ### Models & Techniques
 
-Statistical Analysis: Welch’s T-test, Correlation Analysis
-
-Time-Series Forecasting: ARIMA / SARIMA / Prophet
-
-Visualization Tools: Matplotlib, Seaborn, Plotly
-
-Data Handling: Pandas, NumPy
-
-Model Evaluation: RMSE, MAPE, and visual diagnostics
+| Technique | Model/Tool |
+| :--- | :--- |
+| Statistical Analysis | Welch’s T-test, Correlation Analysis |
+| Time-Series Forecasting |  ARIMA / SARIMA |
+| Data Handling | Pandas, NumPy |
+| Model Evaluation | RMSE, MAPE, and visual diagnostics |
 
 
 
