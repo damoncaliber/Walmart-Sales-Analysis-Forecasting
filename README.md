@@ -78,31 +78,58 @@ Time-Series Structuring: Set the Date column as the index to facilitate resampli
 
 ## Exploratory Data Analysis (EDA)
 
-* How much total revenue does Walmart generate weekly, and what is the average weekly sales performance across all stores?
+#### Overall Sales Performance
 
-* How have total weekly sales changed over the entire period of the data? Are there consistent patterns, spikes, or dips?
+- How much total revenue does Walmart generate weekly, and what is the average weekly sales performance across all stores?
+
+The combined total weekly sales across all stores amounted to $6.73 billion, with an average of $1.05 million per week.
+
+- How have sales evolved over time? Are there consistent patterns or notable fluctuations?
+
+![Trend_over_time](https://github.com/damoncaliber/Walmart-Sales-Analysis-Forecasting/blob/main/Images/Weekly_sales_trend.png)
+
+  Visuals revealed that sales vary seasonally, with peaks around major holidays and the end of the year.
   
-* Which months typically show the highest and lowest sales?
+* Do monthly sales follow a recurring seasonal pattern year over year?
+
+  ![Monthly_trend](https://github.com/damoncaliber/Walmart-Sales-Analysis-Forecasting/blob/main/Images/monthly_sales_trend.png)
+
+* How do monthly average sales compare between different years?
+
+  ![Month_by_years](https://github.com/damoncaliber/Walmart-Sales-Analysis-Forecasting/blob/main/Images/month_by_years.png)
 
 * Do sales follow similar weekly patterns every year, or do some years perform better during certain periods?
 
-* Is there an overall upward or downward trend across years?
+  ![Trend_with_holiday](https://github.com/damoncaliber/Walmart-Sales-Analysis-Forecasting/blob/main/Images/holiday_trend.png)
 
-* What is the distribution of weekly sales?
+*  Which months show the most significant holiday spikes?
+
+![Holiday_by_month](https://github.com/damoncaliber/Walmart-Sales-Analysis-Forecasting/blob/main/Images/Holiday_by_month.png)
+
+* Which stores are driving revenue, and how does performance vary across locations?
+
+  ![Top_5](https://github.com/damoncaliber/Walmart-Sales-Analysis-Forecasting/blob/main/Images/Top_5_performing.png)
+
+Do holiday weeks significantly boost sales compared to non-holiday weeks?
+
+![Holiday_Non-Holiday](https://github.com/damoncaliber/Walmart-Sales-Analysis-Forecasting/blob/main/Images/Holidays_vs_NonHoliday.png)
 
 * Are there outliers that represent special events or data errors?
 
+  ![Outliers](https://github.com/damoncaliber/Walmart-Sales-Analysis-Forecasting/blob/main/Images/outliers.png)
+
 * What is the typical weekly sales performance across stores, and how does it vary?
 
-* Which stores are driving the most revenue?
+  ![Weekly_store](https://github.com/damoncaliber/Walmart-Sales-Analysis-Forecasting/blob/main/Images/ave_weekly_store_perf.png)
 
-* Do holiday weeks significantly boost sales compared to regular weeks?
+* Which stores are underperforming?
 
-* Which months show the most significant holiday spikes?
+  ![Bottom_5](https://github.com/damoncaliber/Walmart-Sales-Analysis-Forecasting/blob/main/Images/bottom_5.png)
 
-* How do external economic factors such as fuel prices, CPI, and unemployment affect Walmart’s sales performance?
+* How do macroeconomic indicators like fuel price, CPI, and unemployment affect sales?
 
-* Heatmap of correlations between Weekly Sales and all numeric variables.
+  ![Economic_indictators](https://github.com/damoncaliber/Walmart-Sales-Analysis-Forecasting/blob/main/Images/Economic_factors_heat.png)
+
   
 
 
