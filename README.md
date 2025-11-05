@@ -11,31 +11,31 @@ This project applies advanced time-series and machine learning techniques to Wal
 
 The core goals of this analysis are to:
 
-Assess overall sales trends to determine whether consistent growth is occurring over time.
+* Assess overall sales trends to determine whether consistent growth is occurring over time.
 
-Evaluate the effectiveness of Walmart’s sales strategies across multiple stores and regions.
+* Evaluate the effectiveness of Walmart’s sales strategies across multiple stores and regions.
 
-Identify top- and bottom-performing stores and weeks, highlighting patterns in geographic and temporal performance.
+* Identify top- and bottom-performing stores and weeks, highlighting patterns in geographic and temporal performance.
 
-Uncover the drivers of sales variability, including macroeconomic factors such as CPI, unemployment rate, fuel price, temperature, and holiday events.
+* Uncover the drivers of sales variability, including macroeconomic factors such as CPI, unemployment rate, fuel price, temperature, and holiday events.
 
-Build a forecasting models to predict future weekly sales and support data-driven decision-making.
+* Build a forecasting models to predict future weekly sales and support data-driven decision-making.
 
-Deliver actionable insights and recommendations that enhance operational efficiency and optimize sales strategies.
+* Deliver actionable insights and recommendations that enhance operational efficiency and optimize sales strategies.
 
 ### Analytical Objectives
 
-Sales Trend Analysis – Evaluate total and average weekly sales to detect patterns and growth trajectories.
+* Sales Trend Analysis – Evaluate total and average weekly sales to detect patterns and growth trajectories.
 
-Holiday Impact Assessment – Quantify the influence of holiday weeks on sales performance using statistical tests.
+* Holiday Impact Assessment – Quantify the influence of holiday weeks on sales performance using statistical tests.
 
-Outlier and Seasonality Detection – Identify anomalies and recurring sales cycles through visual analysis.
+* Outlier and Seasonality Detection – Identify anomalies and recurring sales cycles through visual analysis.
 
-External Driver Analysis – Examine correlations between sales and macroeconomic factors such as fuel prices, CPI, and unemployment.
+* External Driver Analysis – Examine correlations between sales and macroeconomic factors such as fuel prices, CPI, and unemployment.
 
-Forecasting Future Sales – Leverage time-series modeling to predict sales and visualize the sales trajectory.
+* Forecasting Future Sales – Leverage time-series modeling to predict sales and visualize the sales trajectory.
 
-Strategic Insights & Recommendations – Summarize findings to inform data-driven business decisions.
+* Strategic Insights & Recommendations – Summarize findings to inform data-driven business decisions.
 
 ### Process overview
 
@@ -78,33 +78,43 @@ Time-Series Structuring: Set the Date column as the index to facilitate resampli
 
 ## Exploratory Data Analysis (EDA)
 
-#### Seasonal Patterns
+* How much total revenue does Walmart generate weekly, and what is the average weekly sales performance across all stores?
 
-* How has the **sales revenue trended over time**?
+* How have total weekly sales changed over the entire period of the data? Are there consistent patterns, spikes, or dips?
+  
+* Which months typically show the highest and lowest sales?
+
+* Do sales follow similar weekly patterns every year, or do some years perform better during certain periods?
+
+* Is there an overall upward or downward trend across years?
+
+* What is the distribution of weekly sales?
+
+* Are there outliers that represent special events or data errors?
+
+* What is the typical weekly sales performance across stores, and how does it vary?
+
+* Which stores are driving the most revenue?
+
+* Do holiday weeks significantly boost sales compared to regular weeks?
+
+* Which months show the most significant holiday spikes?
+
+* How do external economic factors such as fuel prices, CPI, and unemployment affect Walmart’s sales performance?
+
+* Heatmap of correlations between Weekly Sales and all numeric variables.
+  
 
 
-* Do sales exhibit **seasonal trends**? 
 
-* What are the top performing and least performing stores?
-
-* What are the sales drivers?
-
-* Holiday Impact?
-
-Correlations between sales and economic factors?
+#### Statistical Analysis
 
 
-
-#### Statistical Insights
-
-An insignificant difference (p < 0.05) was observed between holiday and non-holiday sales, confirming that holidays don't affect sales too much.
-
-Temperature showed a moderate correlation with weekly sales, while CPI and unemployment had mild negative effects.
-
-The top-performing stores consistently achieved higher sales during promotional and festive periods.
 
 ## Machine Learning 
 
+* Which economic and environmental factors most influence weekly sales?
+  
 A regression model (Random Forest or XGBoost) was trained to predict weekly sales using external factors (CPI, Unemployment, Fuel price, Temperature).
 
 Evaluation Metrics:
@@ -121,20 +131,8 @@ Store, Holiday_Flag, and Unemployment were top predictors of weekly sales.
 
 ## Time Series Forecasting
 
-To predict future sales, the dataset was transformed into a time series format. Models such as ARIMA, SARIMA were evaluated to capture trends and seasonality.
+To predict future sales, the dataset was transformed into a time series format. Models such as ARIMA, SARIMA & SARIMAX were evaluated to capture trends and seasonality.
 
-##### Process:
-
-Time series decomposition (trend, seasonality, residuals)
-
-Stationarity test using ADF
-
-Model fitting and tuning
-
-Forecast visualization and evaluation
-
-Results:
-The forecast model successfully predicted upcoming sales trends, identifying expected peaks during holiday seasons and dips in off-peak periods.
 
 
 ## Key Findings & Recommendations
@@ -188,6 +186,12 @@ Forecasted trends can guide promotional planning and inventory stocking strategi
 | Data Handling | Pandas, NumPy |
 | Model Evaluation | RMSE, MAPE, and visual diagnostics |
 
+##### About Dataset
+
+| Attribute     | Description |
+| :--- | :--- |
+| **Dataset**    | Walmart Weekly Sales |
+| **Source**     | [Kaggle – Walmart Sales Data](https://www.kaggle.com/datasets/mikhail1681/walmart-sales?select=Walmart_Sales.csv) |
 
 
 
